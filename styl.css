@@ -1,0 +1,528 @@
+@import url(
+  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap'
+);
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #071b16;
+  color: white;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 25px 7%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 10;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.3),
+      transparent
+    );
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+
+.logo span {
+  color: #ffd700;
+}
+
+
+.navbar nav {
+  display: flex;
+  gap: 30px;
+}
+
+
+.navbar nav a {
+  font-size: 14px;
+  color: #eee;
+
+  transition: .3s;
+}
+
+
+.navbar nav a:hover {
+  color: #ffd700;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,40,25,.85),
+      rgba(0,0,0,.35),
+      rgba(0,20,50,.75)
+    );
+}
+
+
+.hero-content {
+  position: relative;
+
+  max-width: 900px;
+
+  padding: 30px;
+}
+
+
+.hero-tag,
+.section-tag {
+  color: #ffd700;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+
+.hero h1 {
+  margin: 20px 0;
+
+  font-size: clamp(45px, 8vw, 90px);
+
+  line-height: 1.02;
+}
+
+
+.hero h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffd700,
+      #00e0a4
+    );
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+
+.hero p {
+  max-width: 700px;
+
+  margin: auto;
+
+  color: #dce9e5;
+
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+.hero-btn {
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding: 16px 30px;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00b878,
+      #00775a
+    );
+
+  font-weight: 700;
+
+  box-shadow:
+    0 15px 40px
+    rgba(0,190,130,.3);
+
+  transition: .3s;
+}
+
+
+.hero-btn:hover {
+  transform: translateY(-5px);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+  text-align: center;
+
+  max-width: 800px;
+
+  margin: auto;
+
+  padding: 110px 25px 70px;
+}
+
+
+.intro h2,
+.section-heading h2,
+.about h2 {
+  font-size: clamp(32px, 5vw, 55px);
+
+  margin: 15px 0 20px;
+}
+
+
+.intro p,
+.about p {
+  color: #a9c4bc;
+
+  line-height: 1.9;
+}
+
+
+/* =========================
+   ZONES
+========================= */
+
+.zones {
+  padding: 50px 7% 110px;
+}
+
+
+.section-heading {
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+
+.section-heading span {
+  color: #ffd700;
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+
+  font-weight: 800;
+}
+
+
+.zone-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 25px;
+}
+
+
+.zone-card {
+  height: 450px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  transition: .5s;
+}
+
+
+.zone-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: .7s;
+}
+
+
+.zone-card:hover img {
+  transform: scale(1.12);
+}
+
+
+.zone-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 30px 70px
+    rgba(0,0,0,.45);
+}
+
+
+.zone-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  background:
+    linear-gradient(
+      transparent 20%,
+      rgba(0,0,0,.9)
+    );
+}
+
+
+.zone-overlay > span {
+  font-size: 35px;
+}
+
+
+.zone-overlay h3 {
+  font-size: 30px;
+
+  margin: 10px 0;
+}
+
+
+.zone-overlay p {
+  color: #c8d8d3;
+
+  margin-bottom: 20px;
+}
+
+
+.zone-overlay strong {
+  color: #ffd700;
+}
+
+
+/* =========================
+   ATTRACTIONS
+========================= */
+
+.attractions {
+  padding: 100px 7%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #08271e,
+      #051914
+    );
+}
+
+
+.attraction-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 20px;
+}
+
+
+.attraction {
+  padding: 35px 25px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,.04);
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+
+  transition: .3s;
+}
+
+
+.attraction:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(0,224,164,.5);
+
+  background:
+    rgba(0,180,130,.1);
+}
+
+
+.attraction-icon {
+  font-size: 45px;
+
+  margin-bottom: 20px;
+}
+
+
+.attraction h3 {
+  margin-bottom: 10px;
+}
+
+
+.attraction p {
+  color: #9eb8b0;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+  padding: 120px 10%;
+
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,30,20,.95),
+      rgba(0,30,20,.65)
+    ),
+    url("https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1800&q=80")
+    center/cover;
+}
+
+
+.about > div {
+  max-width: 700px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 50px 20px;
+
+  text-align: center;
+
+  background: #03100d;
+}
+
+
+.footer-logo {
+  font-size: 25px;
+
+  font-weight: 900;
+
+  margin-bottom: 10px;
+}
+
+
+footer p {
+  color: #7fa298;
+
+  margin-bottom: 20px;
+}
+
+
+footer small {
+  color: #526b63;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .navbar nav {
+    display: none;
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+
+  .hero {
+    min-height: 90vh;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .zone-card {
+    height: 400px;
+  }
+
+}
